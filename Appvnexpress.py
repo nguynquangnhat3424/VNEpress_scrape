@@ -32,7 +32,7 @@ def layscript(url):
     response.encoding = 'utf-8'
     soup = BeautifulSoup(response.text, 'html.parser')
     paragraphs = soup.find_all('p', class_='Normal')
-    article_text = ' '.join([paragraph.get_text() for paragraph in paragraphs])
+    article_text = '. '.join([paragraph.get_text() for paragraph in paragraphs])
     
     sentences = re.split(r'(?<!\d)\.\s+', article_text.strip())
     if len(sentences) > 1:
